@@ -22,7 +22,7 @@ class MyHomePage extends StatelessWidget {
     Transaction(
         id: 't1', title: 'New shoes', amount: 50.21, date: DateTime.now()),
     Transaction(
-        id: 't2', title: 'Loan Payment', amount: 100, date: DateTime.now()),
+        id: 't2', title: 'Loan Payment', amount: 98.01, date: DateTime.now()),
   ];
 
   @override
@@ -56,7 +56,26 @@ class MyHomePage extends StatelessWidget {
             Column(
                 children: transactions.map((tx) {
               return Card(
-                child: Text(tx.title),
+                child: Row(
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.red, width: 2)),
+                        padding: EdgeInsets.all(5),
+                        margin: EdgeInsets.only(
+                            right: 20, left: 10, top: 20, bottom: 20),
+                        child: Text(
+                          'Rs: ' + tx.amount.toString(),
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        )),
+                    Container(
+                      child: Column(
+                        children: [Text(tx.title), Text(tx.date.toString())],
+                      ),
+                    )
+                  ],
+                ),
               );
             }).toList())
           ],
