@@ -1,4 +1,5 @@
-import 'package:expenses_monitor/widgets/transaction_list.dart';
+import './widgets/new_transaction.dart';
+import './widgets/transaction_list.dart';
 import './widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
 
@@ -51,35 +52,7 @@ class MyHomePage extends StatelessWidget {
                     ],
                   )),
             ),
-            Card(
-              elevation: 3,
-              child: Container(
-                margin: EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Title'),
-                      controller: titleInput,
-                    ),
-                    TextField(
-                      decoration: InputDecoration(labelText: 'Amount'),
-                      controller: amountInput,
-                    ),
-                    RaisedButton(
-                      color: Colors.blue,
-                      child: Text(
-                        'Add',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      onPressed: () {
-                        print(titleInput.text);
-                      },
-                    )
-                  ],
-                ),
-              ),
-            ),
+            New_transaction(),
             TransactionList()
           ],
         ),
