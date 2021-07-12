@@ -1,3 +1,5 @@
+import 'package:expenses_monitor/widgets/user_transaction.dart';
+
 import './widgets/new_transaction.dart';
 import './widgets/transaction_list.dart';
 import './widgets/transaction_list.dart';
@@ -52,8 +54,7 @@ class MyHomePage extends StatelessWidget {
                     ],
                   )),
             ),
-            New_transaction(),
-            TransactionList()
+            UserTransaction()
           ],
         ),
       ),
