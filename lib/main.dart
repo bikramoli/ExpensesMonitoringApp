@@ -34,7 +34,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          //mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Card(
@@ -53,6 +53,31 @@ class MyHomePage extends StatelessWidget {
                       )
                     ],
                   )),
+            ),
+            Card(
+              elevation: 3,
+              child: Container(
+                margin: EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Title'),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(labelText: 'Amount'),
+                    ),
+                    RaisedButton(
+                      color: Colors.blue,
+                      child: Text(
+                        'Add',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+              ),
             ),
             Column(
                 children: transactions.map((tx) {
@@ -84,7 +109,7 @@ class MyHomePage extends StatelessWidget {
                           ),
                           Text(
                             DateFormat().format(
-                                tx // DateFormat(yyyy-mm-dd) for formating on own way
+                                tx // DateFormat(yyyy-mm-dd) for formating on own way or DateFormat.ymmmd = may 20 2021
                                     .date), // need to work on date format by importing intl package after installing intl dependencies
                             style: TextStyle(color: Colors.grey),
                           )
