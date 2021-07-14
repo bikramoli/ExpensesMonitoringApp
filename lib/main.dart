@@ -24,31 +24,60 @@ class MyHomePage extends StatelessWidget {
         title: Text('Expenses Monitor'),
       ),
       body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            //mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Card(
+        child: Column(
+          //mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Card(
                 elevation: 5,
                 color: Colors.yellow,
                 child: Container(
-                    width: double.infinity,
-                    margin: EdgeInsets.all(10),
-                    child: Row(
-                      children: [
-                        Card(
+                  width: double.infinity,
+                  margin: EdgeInsets.all(10),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 50,
+                        height: 80,
+                        child: Card(
                           child: Text('this'),
                         ),
-                        Card(
+                      ),
+                      Container(
+                        height: 80,
+                        child: Card(
                           child: Text('this'),
-                        )
-                      ],
-                    )),
-              ),
-              UserTransaction()
-            ],
-          ),
+                        ),
+                      ),
+                      Container(
+                        height: 80,
+                        child: Card(
+                          child: Text('this'),
+                        ),
+                      ),
+                      Container(
+                        height: 80,
+                        child: Card(
+                          child: Text('this'),
+                        ),
+                      ),
+                      Container(
+                        height: 80,
+                        child: Card(
+                          child: Text('this'),
+                        ),
+                      ),
+                      Container(
+                        height: 80,
+                        child: Card(
+                          child: Text('this'),
+                        ),
+                      )
+                    ],
+                  ),
+                )),
+            UserTransaction()
+          ],
         ),
       ),
     );
