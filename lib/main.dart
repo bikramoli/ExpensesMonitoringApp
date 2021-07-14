@@ -24,29 +24,31 @@ class MyHomePage extends StatelessWidget {
         title: Text('Expenses Monitor'),
       ),
       body: Container(
-        child: Column(
-          //mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Card(
-              elevation: 5,
-              color: Colors.yellow,
-              child: Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.all(10),
-                  child: Row(
-                    children: [
-                      Card(
-                        child: Text('this'),
-                      ),
-                      Card(
-                        child: Text('this'),
-                      )
-                    ],
-                  )),
-            ),
-            UserTransaction()
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Card(
+                elevation: 5,
+                color: Colors.yellow,
+                child: Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.all(10),
+                    child: Row(
+                      children: [
+                        Card(
+                          child: Text('this'),
+                        ),
+                        Card(
+                          child: Text('this'),
+                        )
+                      ],
+                    )),
+              ),
+              UserTransaction()
+            ],
+          ),
         ),
       ),
     );
