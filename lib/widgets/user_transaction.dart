@@ -15,6 +15,14 @@ class _UserTransactionState extends State<UserTransaction> {
     Transaction(
         id: 't2', title: 'Loan Payment', amount: 98.01, date: DateTime.now()),
   ];
+  void addNewTransaction(String txTitle, bool txAmount) {
+    final addTx = Transaction(
+        id: DateTime.now(),
+        title: txTitle,
+        amount: txAmount,
+        date: DateTime.now());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(

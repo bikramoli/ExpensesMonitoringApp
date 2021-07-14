@@ -1,8 +1,4 @@
-import 'package:expenses_monitor/widgets/user_transaction.dart';
-
-import './widgets/new_transaction.dart';
-import './widgets/transaction_list.dart';
-import './widgets/transaction_list.dart';
+import './widgets/user_transaction.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,8 +6,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,9 +17,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final titleInput = TextEditingController();
-  final amountInput = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
