@@ -12,21 +12,27 @@ class _UserTransactionState extends State<UserTransaction> {
   final List<Transaction> _transaction = [
     Transaction(
         id: 't1', title: 'New shoes', amount: 50.21, date: DateTime.now()),
-    Transaction(
-        id: 't2', title: 'Loan Payment', amount: 98.01, date: DateTime.now()),
   ];
-  void addNewTransaction(String txTitle, bool txAmount) {
+
+  void addNewTransaction(String txTitle, double txAmount) {
     final addTx = Transaction(
         id: DateTime.now(),
         title: txTitle,
         amount: txAmount,
         date: DateTime.now());
+
+    setState(() {
+      _transaction.add(addTx);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [New_transaction(), TransactionList(_transaction)],
+      children: [
+        New_transaction(addNewTransaction),
+        TransactionList(_transaction)
+      ],
     );
   }
 }
