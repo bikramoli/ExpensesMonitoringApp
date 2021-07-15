@@ -1,3 +1,5 @@
+import './models/chart.dart';
+import 'package:intl/intl.dart';
 import './widgets/user_transaction.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +19,11 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  final List<Chart> chart = [
+    Chart(date: DateTime.now(), cal: '63%'),
+    Chart(date: DateTime.now(), cal: '90%')
+  ];
+  final df = new DateFormat('MM');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,48 +40,15 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.yellow,
                 child: Container(
                   width: double.infinity,
-                  margin: EdgeInsets.all(10),
+                  margin: EdgeInsets.all(5),
                   child: Row(
-                    children: [
-                      Container(
-                        width: 50,
-                        height: 80,
-                        child: Card(
-                          child: Text('this'),
-                        ),
+                      children: chart.map((ch) {
+                    return Card(
+                      child: Column(
+                        children: [Text(df.format(ch.date)), Text(ch.cal)],
                       ),
-                      Container(
-                        height: 80,
-                        child: Card(
-                          child: Text('this'),
-                        ),
-                      ),
-                      Container(
-                        height: 80,
-                        child: Card(
-                          child: Text('this'),
-                        ),
-                      ),
-                      Container(
-                        height: 80,
-                        child: Card(
-                          child: Text('this'),
-                        ),
-                      ),
-                      Container(
-                        height: 80,
-                        child: Card(
-                          child: Text('this'),
-                        ),
-                      ),
-                      Container(
-                        height: 80,
-                        child: Card(
-                          child: Text('this'),
-                        ),
-                      )
-                    ],
-                  ),
+                    );
+                  }).toList()),
                 )),
             UserTransaction()
           ],
