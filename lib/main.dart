@@ -32,30 +32,32 @@ class MyHomePage extends StatelessWidget {
         title: Text('Expenses Monitor'),
       ),
       body: Container(
-        child: Column(
-          //mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [ 
-            Card(
-                elevation: 5,
-                color: Colors.yellow,
-                child: Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.all(5),
-                  child: Row(
-                      children: chart.map((ch) {
-                    return Card(
-                      child: Column(
-                        children: [
-                          Text(DateFormat('MM').format(ch.date)),
-                          Text(ch.cal)
-                        ],
-                      ),
-                    );
-                  }).toList()),
-                )),
-            UserTransaction()
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            //mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Card(
+                  elevation: 5,
+                  color: Colors.yellow,
+                  child: Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.all(5),
+                    child: Row(
+                        children: chart.map((ch) {
+                      return Card(
+                        child: Column(
+                          children: [
+                            Text(DateFormat('MM').format(ch.date)),
+                            Text(ch.cal)
+                          ],
+                        ),
+                      );
+                    }).toList()),
+                  )),
+              UserTransaction()
+            ],
+          ),
         ),
       ),
     );
