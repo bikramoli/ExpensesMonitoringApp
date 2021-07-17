@@ -21,9 +21,10 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final List<Chart> chart = [
     Chart(date: DateTime.now(), cal: '63%'),
-    Chart(date: DateTime.now(), cal: '90%')
+    Chart(date: DateTime.now(), cal: '90%'),
+    Chart(date: DateTime.now(), cal: '80%')
   ];
-  final df = new DateFormat('MM');
+  //final df = new DateFormat('MM');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,7 +35,7 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+          children: [ 
             Card(
                 elevation: 5,
                 color: Colors.yellow,
@@ -45,7 +46,10 @@ class MyHomePage extends StatelessWidget {
                       children: chart.map((ch) {
                     return Card(
                       child: Column(
-                        children: [Text(df.format(ch.date)), Text(ch.cal)],
+                        children: [
+                          Text(DateFormat('MM').format(ch.date)),
+                          Text(ch.cal)
+                        ],
                       ),
                     );
                   }).toList()),
