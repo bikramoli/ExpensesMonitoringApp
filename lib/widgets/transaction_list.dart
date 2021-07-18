@@ -23,7 +23,7 @@ class TransactionList extends StatelessWidget {
                   margin:
                       EdgeInsets.only(right: 20, left: 10, top: 10, bottom: 10),
                   child: Text(
-                    '\$ ' + tx.amount.toString(),
+                    '\$${tx.amount.toString()}',
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
