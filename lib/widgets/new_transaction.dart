@@ -43,7 +43,7 @@ class New_transaction extends StatelessWidget {
                         content:
                             Text('New transaction added successfully!!!!')));
                   }
-                })
+                }),
           ],
         ),
       ),
