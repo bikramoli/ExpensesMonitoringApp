@@ -33,20 +33,27 @@ class _UserTransactionState extends State<UserTransaction> {
     });
   }
 
+  void startAddNewTransaction(BuildContext ctx) {
+    showModalBottomSheet(
+      context: ctx,
+      builder: (_) {
+        return New_transaction(addNewTransaction);
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Charts(_chart),
-        New_transaction(addNewTransaction),
+        //New_transaction(addNewTransaction),
         TransactionList(_transaction),
-        Container(
-          margin: EdgeInsets.only(left: 0),
-          child: FloatingActionButton(
-            onPressed: () {},
-            child: Icon(Icons.add),
-          ),
-        )
+
+        FloatingActionButton(
+          onPressed: () => startAddNewTransaction(context),
+          child: Icon(Icons.add),
+        ),
       ],
     );
   }
