@@ -7,8 +7,6 @@ class Landing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.amber,
-
       /// this only set color for container
       margin: EdgeInsets.only(top: 50),
       child: Row(
@@ -27,7 +25,7 @@ class Landing extends StatelessWidget {
                 onPressed: expenses,
                 child: Text(
                   'दिएको रकम',
-                  style: TextStyle(color: Colors.white, fontSize: 30),
+                  style: TextStyle(color: Colors.white, fontSize: 26),
                 ),
               ),
             ),
@@ -45,7 +43,7 @@ class Landing extends StatelessWidget {
                     onPressed: earning,
                     child: Text(
                       'लिइएको रकम',
-                      style: TextStyle(color: Colors.white, fontSize: 30),
+                      style: TextStyle(color: Colors.white, fontSize: 26),
                     ))),
           )
         ],

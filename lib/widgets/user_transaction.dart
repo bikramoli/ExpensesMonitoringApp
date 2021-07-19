@@ -39,7 +39,14 @@ class _UserTransactionState extends State<UserTransaction> {
       children: [
         Charts(_chart),
         New_transaction(addNewTransaction),
-        TransactionList(_transaction)
+        TransactionList(_transaction),
+        Container(
+          margin: EdgeInsets.only(left: 0),
+          child: FloatingActionButton(
+            onPressed: () {},
+            child: Icon(Icons.add),
+          ),
+        )
       ],
     );
   }

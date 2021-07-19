@@ -60,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
             onPressed: reset,
           ),
         ),
+        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.add))],
       ),
       body: Container(
         decoration: BoxDecoration(
