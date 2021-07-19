@@ -7,36 +7,47 @@ class Landing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      margin: EdgeInsets.all(5),
+      color: Colors.amber,
+
+      /// this only set color for container
+      margin: EdgeInsets.only(top: 50),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            decoration: BoxDecoration(
-                border: Border.all(color: Colors.green, width: 4),
-                borderRadius: BorderRadius.circular(12)),
-            width: 180,
-            height: 100,
-            child: RaisedButton(
-              color: Colors.red,
-              onPressed: expenses,
-              child: Text(
-                'दिएको रकम',
-                style: TextStyle(color: Colors.white, fontSize: 30),
-              ),
-            ),
-          ),
-          Container(
+          Card(
+            elevation: 100,
+            child: Container(
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black, width: 4),
+                  borderRadius: BorderRadius.circular(12)),
               width: 180,
               height: 100,
               child: RaisedButton(
-                  color: Colors.red,
-                  onPressed: earning,
-                  child: Text(
-                    'लिइएको रकम',
-                    style: TextStyle(color: Colors.white, fontSize: 30),
-                  )))
+                color: Colors.blue,
+                onPressed: expenses,
+                child: Text(
+                  'दिएको रकम',
+                  style: TextStyle(color: Colors.white, fontSize: 30),
+                ),
+              ),
+            ),
+          ),
+          Card(
+            elevation: 100,
+            child: Container(
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 4),
+                    borderRadius: BorderRadius.circular(12)),
+                width: 180,
+                height: 100,
+                child: RaisedButton(
+                    color: Colors.blue,
+                    onPressed: earning,
+                    child: Text(
+                      'लिइएको रकम',
+                      style: TextStyle(color: Colors.white, fontSize: 30),
+                    ))),
+          )
         ],
       ),
     );

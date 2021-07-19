@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
           alignment: Alignment.center,
           child: FlatButton(
             child: Text(
-              'खर्चहरू',
+              'Expenses Monitor',
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
             onPressed: reset,
@@ -62,6 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/landing.jpg'), fit: BoxFit.cover)),
         child: Column(
           //mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
