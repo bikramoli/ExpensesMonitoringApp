@@ -28,11 +28,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var number = 1;
+  var page;
 
   void expensesE() {
     setState(() {
-      number = 2;
+      page = 'transaction_page';
     });
   }
 
@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void reset() {
     setState(() {
-      number = 1;
+      page = 'landing_page';
     });
   }
 
@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
           alignment: Alignment.center,
           child: FlatButton(
             child: Text(
-              'Expenses Monitor',
+              'खर्चहरू',
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
             onPressed: reset,
@@ -66,12 +66,12 @@ class _MyHomePageState extends State<MyHomePage> {
           //mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            number == 1
+            page == 'landing_page'
                 ? Landing(
                     expenses: expensesE,
                     earning: earningE,
                   )
-                : number == 2
+                : page == 'transaction_page'
                     ? UserTransaction()
                     : Text('this')
           ],
