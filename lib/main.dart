@@ -1,12 +1,9 @@
-import 'package:expenses_monitor/widgets/landing.dart';
-import 'package:expenses_monitor/widgets/transaction_list.dart';
+import './widgets/landing.dart';
+import './widgets/transaction_list.dart';
 import './models/transaction.dart';
 import './models/chart.dart';
-import 'package:intl/intl.dart';
-import './widgets/user_transaction.dart';
 import 'package:flutter/material.dart';
 import './widgets/chart.dart';
-import './widgets/landing.dart';
 import './widgets/new_transaction.dart';
 
 void main() {
@@ -50,7 +47,10 @@ class _MyAppState extends State<MyApp> {
                         expenses: expensesE,
                         earning: earningE,
                       )
-                    : Text('this')));
+                    : Landing(
+                        expenses: expensesE,
+                        earning: earningE,
+                      )));
   }
 }
 
@@ -82,7 +82,10 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void startAddNewTransaction(BuildContext ctx) {
+  final titleInput = TextEditingController();
+  final amountInput = TextEditingController();
+
+  void _startAddNewTransaction(BuildContext ctx) {
     showModalBottomSheet(
       context: ctx,
       builder: (_) {
@@ -115,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         actions: [
           IconButton(
-              onPressed: () => startAddNewTransaction(context),
+              onPressed: () => _startAddNewTransaction(context),
               icon: Icon(Icons.add))
         ],
       ),
@@ -130,6 +133,7 @@ class _MyHomePageState extends State<MyHomePage> {
             Column(
               children: [
                 Charts(_chart),
+                //New_transaction(addNewTransaction),
                 TransactionList(_transaction),
               ],
             )
@@ -138,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton(
-        onPressed: () => startAddNewTransaction(context),
+        onPressed: () => _startAddNewTransaction(context),
         child: Icon(Icons.add),
       ),
     );

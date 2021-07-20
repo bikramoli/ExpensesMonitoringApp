@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './user_transaction.dart';
 
 class New_transaction extends StatelessWidget {
   final titleInput = TextEditingController();
