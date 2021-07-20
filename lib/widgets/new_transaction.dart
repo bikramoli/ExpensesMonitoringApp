@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 
-class New_transaction extends StatelessWidget {
-  final titleInput = TextEditingController();
-  final amountInput = TextEditingController();
+class New_transaction extends StatefulWidget {
   final addNewT;
 
   New_transaction(this.addNewT);
+
+  @override
+  _New_transactionState createState() => _New_transactionState();
+}
+
+class _New_transactionState extends State<New_transaction> {
+  final titleInput = TextEditingController();
+
+  final amountInput = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +33,7 @@ class New_transaction extends StatelessWidget {
               keyboardType: TextInputType.number,
             ),
             FlatButton(
-                color: Colors.blue,
+                color: Theme.of(context).primaryColor,
                 child: Text(
                   'Add',
                   style: TextStyle(color: Colors.white),
@@ -36,7 +43,8 @@ class New_transaction extends StatelessWidget {
                       double.parse(amountInput.text) <= 0) {
                     return;
                   } else {
-                    addNewT(titleInput.text, double.parse(amountInput.text));
+                    widget.addNewT(
+                        titleInput.text, double.parse(amountInput.text));
                     //this is like popup notification
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content:

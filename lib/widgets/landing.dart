@@ -7,6 +7,11 @@ class Landing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 700,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('assets/landing.jpg'), fit: BoxFit.cover)),
+
       /// this only set color for container
       margin: EdgeInsets.only(top: 50),
       child: Row(

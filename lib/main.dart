@@ -39,6 +39,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Expenses Monitoring',
+        theme: ThemeData(primarySwatch: Colors.amber),
         home: Scaffold(
             body: page == 2
                 ? MyHomePage()
@@ -66,8 +67,8 @@ class _MyHomePageState extends State<MyHomePage> {
     Chart(date: DateTime.now(), cal: '80%')
   ];
   final List<Transaction> _transaction = [
-    Transaction(
-        id: 't1', title: 'New shoes', amount: 50.21, date: DateTime.now()),
+    //Transaction(
+    //id: 't1', title: 'New shoes', amount: 50.21, date: DateTime.now()),
   ];
 
   void addNewTransaction(String txTitle, double txAmount) {
