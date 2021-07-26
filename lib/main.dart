@@ -61,15 +61,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<Chart> _chart = [
-    Chart(date: DateTime.now(), cal: '63%'),
-    Chart(date: DateTime.now(), cal: '90%'),
-    Chart(date: DateTime.now(), cal: '80%')
-  ];
   final List<Transaction> _transaction = [
     //Transaction(
     //id: 't1', title: 'New shoes', amount: 50.21, date: DateTime.now()),
   ];
+
+  List<Transaction> get _recentTransaction {
+    return _transaction.where((tx) {
+      return tx.date.isAfter(
+        DateTime.now().subtract(
+          Duration(days: 7),
+        ),
+      );
+    }).toList();
+  }
 
   void addNewTransaction(String txTitle, double txAmount) {
     final addTx = Transaction(
@@ -133,7 +138,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Column(
               children: [
-                Charts(_chart),
+                Charts(_recentTransaction),
                 //New_transaction(addNewTransaction),
                 TransactionList(_transaction),
               ],
