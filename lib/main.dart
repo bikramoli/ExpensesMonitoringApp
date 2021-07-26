@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Expenses Monitoring',
-        theme: ThemeData(primarySwatch: Colors.amber),
+        theme: ThemeData(primarySwatch: Colors.purple),
         home: Scaffold(
             body: page == 2
                 ? MyHomePage()
