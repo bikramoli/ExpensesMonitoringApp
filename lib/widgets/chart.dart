@@ -30,14 +30,31 @@ class Charts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(allTransactionValue);
+    // chart updating successfully made
     return Card(
       elevation: 5,
       color: Theme.of(context).primaryColor,
       child: Container(
           width: double.infinity,
           margin: EdgeInsets.all(5),
-          child: Row(children: [])),
+          child: Row(
+            children: allTransactionValue.map((data) {
+              return Container(
+                child: Card(
+                  child: Column(
+                    children: [
+                      Container(
+                          child: Text(
+                        '${data['day']}',
+                        style: TextStyle(fontSize: 28),
+                      )),
+                      Container(child: Text('${data['amount']}'))
+                    ],
+                  ),
+                ),
+              );
+            }).toList(),
+          )),
     );
   }
 }
