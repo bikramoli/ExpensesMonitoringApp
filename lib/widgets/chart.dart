@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../models/chart.dart';
 import '../models/transaction.dart';
+import './chart_bar.dart';
 
 class Charts extends StatelessWidget {
   final List<Transaction> recentTransaction;
@@ -36,22 +37,18 @@ class Charts extends StatelessWidget {
       color: Theme.of(context).primaryColor,
       child: Container(
           width: double.infinity,
-          margin: EdgeInsets.all(5),
+          margin: EdgeInsets.all(2),
           child: Row(
             children: allTransactionValue.map((data) {
               return Container(
-                child: Card(
-                  child: Column(
-                    children: [
-                      Container(
-                          child: Text(
-                        '${data['day']}',
-                        style: TextStyle(fontSize: 28),
-                      )),
-                      Container(child: Text('${data['amount']}'))
-                    ],
-                  ),
-                ),
+                child: ChartBar(data),
+
+                // Container(
+                //     child: Text(
+                //   '${data['day']}',
+                //   style: TextStyle(fontSize: 28),
+                // )),
+                // Container(child: Text('${data['amount']}'))
               );
             }).toList(),
           )),
