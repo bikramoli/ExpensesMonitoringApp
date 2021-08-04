@@ -24,21 +24,24 @@ class TransactionList extends StatelessWidget {
                 elevation: 20,
                 child: Row(
                   children: [
-                    Container(
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: Theme.of(context).primaryColor,
-                                width: 2)),
-                        padding: EdgeInsets.all(5),
-                        margin: EdgeInsets.only(
-                            right: 20, left: 10, top: 10, bottom: 10),
-                        child: Text(
-                          '\Rs ${tx.amount.toString()}',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.purple),
-                        )),
+                    Flexible(
+                      fit: FlexFit.tight,
+                      child: Container(
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: Theme.of(context).primaryColor,
+                                  width: 2)),
+                          padding: EdgeInsets.all(5),
+                          margin: EdgeInsets.only(
+                              right: 20, left: 10, top: 10, bottom: 10),
+                          child: Text(
+                            '\Rs ${tx.amount.toString()}',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.purple),
+                          )),
+                    ),
                     Container(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,

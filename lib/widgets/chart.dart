@@ -37,8 +37,9 @@ class Charts extends StatelessWidget {
       color: Theme.of(context).primaryColor,
       child: Container(
           width: double.infinity,
-          margin: EdgeInsets.all(2),
+          //margin: EdgeInsets.all(2),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: allTransactionValue.map((data) {
               return Container(
                 child: ChartBar(data),
