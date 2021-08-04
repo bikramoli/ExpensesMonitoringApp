@@ -5,6 +5,7 @@ import './models/chart.dart';
 import 'package:flutter/material.dart';
 import './widgets/chart.dart';
 import './widgets/new_transaction.dart';
+import './widgets/test.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,7 +43,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(primarySwatch: Colors.amber),
         home: Scaffold(
             body: page == 2
-                ? MyHomePage()
+                ? Expnd() //MyHomePage()
                 : page == 1
                     ? Landing(
                         expenses: expensesE,

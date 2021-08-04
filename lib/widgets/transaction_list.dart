@@ -43,6 +43,7 @@ class TransactionList extends StatelessWidget {
                           )),
                     ),
                     Container(
+                      width: 230,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
