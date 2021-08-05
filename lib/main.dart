@@ -1,11 +1,11 @@
 import './widgets/landing.dart';
 import './widgets/transaction_list.dart';
 import './models/transaction.dart';
-import './models/chart.dart';
+//import './models/chart.dart';
 import 'package:flutter/material.dart';
 import './widgets/chart.dart';
 import './widgets/new_transaction.dart';
-import './widgets/test.dart';
+//import 'widgets/flxble.dart';
 
 void main() {
   runApp(MyApp());
@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
         theme: ThemeData(primarySwatch: Colors.amber),
         home: Scaffold(
             body: page == 2
-                ? Expnd() //MyHomePage()
+                ? MyHomePage()
                 : page == 1
                     ? Landing(
                         expenses: expensesE,

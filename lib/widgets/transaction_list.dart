@@ -20,7 +20,19 @@ class TransactionList extends StatelessWidget {
             height: 500,
             child: ListView(
                 children: uTransaction.map((tx) {
-              return Card(
+              return ListTile(
+                  leading: CircleAvatar(
+                backgroundColor: Colors.grey,
+                radius: 40,
+                child: Padding(
+                    padding: EdgeInsets.all(10),
+                    child: FittedBox(
+                        child: Text(
+                      '\Rs ${tx.amount.toString()}',
+                      style: TextStyle(fontSize: 12, color: Colors.white),
+                    ))),
+              ));
+              /* Card(
                 elevation: 20,
                 child: Row(
                   children: [
@@ -63,7 +75,7 @@ class TransactionList extends StatelessWidget {
                     )
                   ],
                 ),
-              );
+              ); */
             }).toList()),
           );
   }
